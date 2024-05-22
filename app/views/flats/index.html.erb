@@ -7,6 +7,12 @@
     </div>
   <% end %>
 
+  <hr>
+  <div class="container mt5 text-center">
+  <%= link_to 'Add a flat', new_flat_path, class: 'btn btn-primary' %>
+  </div>
+  <hr>
+
   <div class="row">
     <% @flats.each do |flat| %>
       <div class="col-md-4">

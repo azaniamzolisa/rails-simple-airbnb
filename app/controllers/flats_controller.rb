@@ -18,22 +18,24 @@ class FlatsController < ApplicationController
     else
       render :new
     end
+  end
 
-    def show
-      @flat = Flat.find(params[:id])
-    end
+  def show
+    @flat = Flat.find(params[:id])
+  end
 
-    def edit
-      @flat = Flat.find(params[:id])
-    end
 
-    def update
-      @flat = Flat.find(params[:id])
-      if @flat.update(flat_params)
-        redirect_to @flat, notice: 'Flat was successfully updated.'
-      else
-        render :edit
-      end
+
+  def edit
+    @flat = Flat.find(params[:id])
+  end
+
+  def update
+    @flat = Flat.find(params[:id])
+    if @flat.update(flat_params)
+      redirect_to @flat, notice: 'Flat was successfully updated.'
+    else
+      render :edit
     end
 
     def destroy
@@ -41,8 +43,6 @@ class FlatsController < ApplicationController
       @flat.destroy
       redirect_to flats_path, notice: 'Flat was successfully deleted.'
     end
-
-
   end
 
   private
