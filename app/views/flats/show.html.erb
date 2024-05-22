@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <h1><%= @flat.name %></h1>
+  <%= image_tag @flat.picture_url, class: 'img-fluid' %>
+  <p><%= @flat.description %></p>
+  <p><strong>Address:</strong> <%= @flat.address %></p>
+  <p><strong>Price per night:</strong> £<%= @flat.price_per_night %></p>
+  <p><strong>Number of guests:</strong> <%= @flat.number_of_guests %></p>
+
+  <%= link_to 'Edit', edit_flat_path(@flat), class: 'btn btn-warning' %>
+  <%= link_to 'Back to Flats', flats_path, class: 'btn btn-secondary' %>
+  <%= link_to 'Delete', @flat, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-danger' %>
+</div>
